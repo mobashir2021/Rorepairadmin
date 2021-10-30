@@ -1,0 +1,81 @@
+﻿@model RoRepairAdmin.Models.tbl_headers
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_headers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.technicianheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.technicianheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerreviewsheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerreviewsheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.blogheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.blogheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.faqsheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.faqsheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aboutrorepairheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aboutrorepairheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.avgrating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.avgrating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalnoofratings)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalnoofratings)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<RoRepairAdmin.Models.customerreviewmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.technicianid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.customername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.monthandyear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.technicianid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.customername)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.rating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.monthandyear)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.comments)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.tbl.customerreviewsid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.tbl.customerreviewsid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.tbl.customerreviewsid })
+    </td>
+</tr>
+}
+
+</table>

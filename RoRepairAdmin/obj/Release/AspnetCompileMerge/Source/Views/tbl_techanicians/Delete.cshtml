@@ -1,0 +1,65 @@
+﻿@model RoRepairAdmin.Models.tbl_techanicians
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_techanicians</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.technicianname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.technicianname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.technicianaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.technicianaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.technicianavgrating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.technicianavgrating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.techniciantotalnorating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.techniciantotalnorating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.technicianimage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.technicianimage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

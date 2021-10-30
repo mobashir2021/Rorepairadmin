@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rorepairadminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="rorepairadminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="rorepairadminModel.City" />
+    <EntitySet Name="tbl_blogs" EntityType="rorepairadminModel.tbl_blogs" />
+    <EntitySet Name="tbl_customerreviews" EntityType="rorepairadminModel.tbl_customerreviews" />
+    <EntitySet Name="tbl_faqs" EntityType="rorepairadminModel.tbl_faqs" />
+    <EntitySet Name="tbl_headers" EntityType="rorepairadminModel.tbl_headers" />
+    <EntitySet Name="tbl_howitworks" EntityType="rorepairadminModel.tbl_howitworks" />
+    <EntitySet Name="tbl_techanicians" EntityType="rorepairadminModel.tbl_techanicians" />
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Cityid" />
+    </Key>
+    <Property Name="Cityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cityname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_blogs">
+    <Key>
+      <PropertyRef Name="blogid" />
+    </Key>
+    <Property Name="blogid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="blogname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="blogimage" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="blogdate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="blogdesc" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_customerreviews">
+    <Key>
+      <PropertyRef Name="customerreviewsid" />
+    </Key>
+    <Property Name="customerreviewsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="technicianid" Type="Int32" />
+    <Property Name="customername" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="rating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="monthandyear" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_faqs">
+    <Key>
+      <PropertyRef Name="faqid" />
+    </Key>
+    <Property Name="faqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="faqquestion" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="faqanswer" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_headers">
+    <Key>
+      <PropertyRef Name="headerid" />
+    </Key>
+    <Property Name="headerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="technicianheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="customerreviewsheader" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="blogheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="faqsheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="aboutrorepairheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="avgrating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="totalnoofratings" Type="Int32" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_howitworks">
+    <Key>
+      <PropertyRef Name="howitworksid" />
+    </Key>
+    <Property Name="howitworksid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="howitworksheader" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksiconone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworkssubheaderone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksparaone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksicontwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworkssubheadertwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksparatwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksiconthree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworkssubheaderthree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksparathree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksiconfour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworkssubheaderfour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="howitworksparafour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_techanicians">
+    <Key>
+      <PropertyRef Name="technicianid" />
+    </Key>
+    <Property Name="technicianid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="technicianname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="technicianaddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="technicianavgrating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="techniciantotalnorating" Type="Int32" />
+    <Property Name="technicianimage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Cityid" Type="Int32" />
+  </EntityType>
+</Schema>

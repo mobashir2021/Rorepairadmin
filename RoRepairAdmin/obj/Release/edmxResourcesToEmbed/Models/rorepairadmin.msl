@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rorepairadminModelStoreContainer" CdmEntityContainer="rorepairadminEntities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="rorepairadminModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Cityname" ColumnName="Cityname" />
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_blogs">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_blogs">
+        <MappingFragment StoreEntitySet="tbl_blogs">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="blogdesc" ColumnName="blogdesc" />
+          <ScalarProperty Name="blogdate" ColumnName="blogdate" />
+          <ScalarProperty Name="blogimage" ColumnName="blogimage" />
+          <ScalarProperty Name="blogname" ColumnName="blogname" />
+          <ScalarProperty Name="blogid" ColumnName="blogid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_customerreviews">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_customerreviews">
+        <MappingFragment StoreEntitySet="tbl_customerreviews">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="monthandyear" ColumnName="monthandyear" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="technicianid" ColumnName="technicianid" />
+          <ScalarProperty Name="customerreviewsid" ColumnName="customerreviewsid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_faqs">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_faqs">
+        <MappingFragment StoreEntitySet="tbl_faqs">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="faqanswer" ColumnName="faqanswer" />
+          <ScalarProperty Name="faqquestion" ColumnName="faqquestion" />
+          <ScalarProperty Name="faqid" ColumnName="faqid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_headers">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_headers">
+        <MappingFragment StoreEntitySet="tbl_headers">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="totalnoofratings" ColumnName="totalnoofratings" />
+          <ScalarProperty Name="avgrating" ColumnName="avgrating" />
+          <ScalarProperty Name="aboutrorepairheader" ColumnName="aboutrorepairheader" />
+          <ScalarProperty Name="faqsheader" ColumnName="faqsheader" />
+          <ScalarProperty Name="blogheader" ColumnName="blogheader" />
+          <ScalarProperty Name="customerreviewsheader" ColumnName="customerreviewsheader" />
+          <ScalarProperty Name="technicianheader" ColumnName="technicianheader" />
+          <ScalarProperty Name="headerid" ColumnName="headerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_howitworks">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_howitworks">
+        <MappingFragment StoreEntitySet="tbl_howitworks">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="howitworksparafour" ColumnName="howitworksparafour" />
+          <ScalarProperty Name="howitworkssubheaderfour" ColumnName="howitworkssubheaderfour" />
+          <ScalarProperty Name="howitworksiconfour" ColumnName="howitworksiconfour" />
+          <ScalarProperty Name="howitworksparathree" ColumnName="howitworksparathree" />
+          <ScalarProperty Name="howitworkssubheaderthree" ColumnName="howitworkssubheaderthree" />
+          <ScalarProperty Name="howitworksiconthree" ColumnName="howitworksiconthree" />
+          <ScalarProperty Name="howitworksparatwo" ColumnName="howitworksparatwo" />
+          <ScalarProperty Name="howitworkssubheadertwo" ColumnName="howitworkssubheadertwo" />
+          <ScalarProperty Name="howitworksicontwo" ColumnName="howitworksicontwo" />
+          <ScalarProperty Name="howitworksparaone" ColumnName="howitworksparaone" />
+          <ScalarProperty Name="howitworkssubheaderone" ColumnName="howitworkssubheaderone" />
+          <ScalarProperty Name="howitworksiconone" ColumnName="howitworksiconone" />
+          <ScalarProperty Name="howitworksheader" ColumnName="howitworksheader" />
+          <ScalarProperty Name="howitworksid" ColumnName="howitworksid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_techanicians">
+      <EntityTypeMapping TypeName="rorepairadminModel.tbl_techanicians">
+        <MappingFragment StoreEntitySet="tbl_techanicians">
+          <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+          <ScalarProperty Name="technicianimage" ColumnName="technicianimage" />
+          <ScalarProperty Name="techniciantotalnorating" ColumnName="techniciantotalnorating" />
+          <ScalarProperty Name="technicianavgrating" ColumnName="technicianavgrating" />
+          <ScalarProperty Name="technicianaddress" ColumnName="technicianaddress" />
+          <ScalarProperty Name="technicianname" ColumnName="technicianname" />
+          <ScalarProperty Name="technicianid" ColumnName="technicianid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

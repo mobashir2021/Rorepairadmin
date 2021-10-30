@@ -1,0 +1,146 @@
+﻿@model RoRepairAdmin.Models.tbl_howitworks
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "tbl_howitworks", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>tbl_howitworks</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Choose City", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Cityid, ViewBag.CityList as SelectList, "Select City", new { @class = "form-control" })
+            
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksheader, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworksheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworksheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksiconone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.howitworksiconone, new { htmlAttributes = new { @class = "form-control" } })*@
+
+            <input type="file" class="form-control" name="iconone" value="Upload Iconone" />
+            @Html.ValidationMessageFor(model => model.howitworksiconone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworkssubheaderone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworkssubheaderone, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworkssubheaderone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksparaone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworksparaone, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworksparaone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksicontwo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" class="form-control" name="icontwo" value="Upload Icontwo" />
+            @Html.ValidationMessageFor(model => model.howitworksicontwo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworkssubheadertwo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworkssubheadertwo, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworkssubheadertwo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksparatwo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworksparatwo, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworksparatwo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksiconthree, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" class="form-control" name="iconthree" value="Upload Iconthree" />
+            @Html.ValidationMessageFor(model => model.howitworksiconthree, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworkssubheaderthree, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworkssubheaderthree, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworkssubheaderthree, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksparathree, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworksparathree, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworksparathree, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksiconfour, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" class="form-control" name="iconfour" value="Upload Iconfour" />
+            @Html.ValidationMessageFor(model => model.howitworksiconfour, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworkssubheaderfour, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworkssubheaderfour, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworkssubheaderfour, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.howitworksparafour, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.howitworksparafour, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.howitworksparafour, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

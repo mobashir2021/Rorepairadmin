@@ -1,0 +1,116 @@
+﻿@model IEnumerable<RoRepairAdmin.Models.howitworksmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div  style="width: 1300px; overflow-x: scroll;">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksheader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksiconone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworkssubheaderone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksparaone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksicontwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworkssubheadertwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksparatwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksiconthree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworkssubheaderthree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksparathree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksiconfour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworkssubheaderfour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbl.howitworksparafour)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworksheader)
+        </td>
+        <td>
+            <img src="@Url.Content("~/UploadedFiles/" + item.tbl.howitworksiconone)" alt="Image" style="height:40px;width:40px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworkssubheaderone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworksparaone)
+        </td>
+        <td>
+            <img src="@Url.Content("~/UploadedFiles/" + item.tbl.howitworksicontwo)" alt="Image" style="height:40px;width:40px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworkssubheadertwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworksparatwo)
+        </td>
+        <td>
+            <img src="@Url.Content("~/UploadedFiles/" + item.tbl.howitworksiconthree)" alt="Image" style="height:40px;width:40px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworkssubheaderthree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworksparathree)
+        </td>
+        <td>
+            <img src="@Url.Content("~/UploadedFiles/" + item.tbl.howitworksiconfour)" alt="Image" style="height:40px;width:40px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworkssubheaderfour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl.howitworksparafour)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.tbl.howitworksid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.tbl.howitworksid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.tbl.howitworksid })
+        </td>
+    </tr>
+        }
+
+    </table>
+
+</div>

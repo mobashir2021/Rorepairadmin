@@ -1,0 +1,96 @@
+﻿@model RoRepairAdmin.Models.tbl_headers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Headers</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Choose City", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Cityid, ViewBag.CityList as SelectList,"Select City", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.technicianheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Technician Header", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.technicianheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.technicianheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("CustomerReview Header", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.customerreviewsheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.customerreviewsheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Blog Header", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.blogheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.blogheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("FAQs Header", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.faqsheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.faqsheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("About RORepair Header", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.aboutrorepairheader, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.aboutrorepairheader, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Average Rating", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.avgrating, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.avgrating, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Total Rating", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.totalnoofratings, new { htmlAttributes = new { @class = "form-control" }, cols = "55", rows = "5" })
+            @Html.ValidationMessageFor(model => model.totalnoofratings, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

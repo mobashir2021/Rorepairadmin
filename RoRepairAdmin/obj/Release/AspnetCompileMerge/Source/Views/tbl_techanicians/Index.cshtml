@@ -1,0 +1,64 @@
+﻿@model IEnumerable<RoRepairAdmin.Models.technicianmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.technicianname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.technicianaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.technicianavgrating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.techniciantotalnorating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.technicianimage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.technicianname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.technicianaddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.technicianavgrating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.techniciantotalnorating)
+    </td>
+    <td>
+        <img src="@Url.Content("~/UploadedFiles/" + item.tbl.technicianimage)" alt="Image" style="height:40px;width:40px;" />
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.tbl.technicianid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.tbl.technicianid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.tbl.technicianid })
+    </td>
+</tr>
+}
+
+</table>

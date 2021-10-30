@@ -1,0 +1,129 @@
+﻿@model RoRepairAdmin.Models.tbl_howitworks
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_howitworks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksheader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksheader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksiconone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksiconone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworkssubheaderone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworkssubheaderone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksparaone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksparaone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksicontwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksicontwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworkssubheadertwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworkssubheadertwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksparatwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksparatwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksiconthree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksiconthree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworkssubheaderthree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworkssubheaderthree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksparathree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksparathree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksiconfour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksiconfour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworkssubheaderfour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworkssubheaderfour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.howitworksparafour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.howitworksparafour)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

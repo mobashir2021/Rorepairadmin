@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="rorepairadminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Cityid" />
+          </Key>
+          <Property Name="Cityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cityname" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="tbl_blogs">
+          <Key>
+            <PropertyRef Name="blogid" />
+          </Key>
+          <Property Name="blogid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blogname" Type="varchar" MaxLength="1000" />
+          <Property Name="blogimage" Type="varchar" MaxLength="2000" />
+          <Property Name="blogdate" Type="varchar" MaxLength="100" />
+          <Property Name="blogdesc" Type="varchar" MaxLength="5000" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_customerreviews">
+          <Key>
+            <PropertyRef Name="customerreviewsid" />
+          </Key>
+          <Property Name="customerreviewsid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="technicianid" Type="int" />
+          <Property Name="customername" Type="varchar" MaxLength="1000" />
+          <Property Name="rating" Type="varchar" MaxLength="100" />
+          <Property Name="monthandyear" Type="varchar" MaxLength="100" />
+          <Property Name="comments" Type="varchar" MaxLength="1000" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_faqs">
+          <Key>
+            <PropertyRef Name="faqid" />
+          </Key>
+          <Property Name="faqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="faqquestion" Type="varchar" MaxLength="2000" />
+          <Property Name="faqanswer" Type="varchar" MaxLength="5000" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_headers">
+          <Key>
+            <PropertyRef Name="headerid" />
+          </Key>
+          <Property Name="headerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="technicianheader" Type="varchar" MaxLength="1000" />
+          <Property Name="customerreviewsheader" Type="varchar" MaxLength="1500" />
+          <Property Name="blogheader" Type="varchar" MaxLength="1000" />
+          <Property Name="faqsheader" Type="varchar" MaxLength="1000" />
+          <Property Name="aboutrorepairheader" Type="varchar" MaxLength="1000" />
+          <Property Name="avgrating" Type="varchar" MaxLength="100" />
+          <Property Name="totalnoofratings" Type="int" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_howitworks">
+          <Key>
+            <PropertyRef Name="howitworksid" />
+          </Key>
+          <Property Name="howitworksid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="howitworksheader" Type="varchar" MaxLength="100" />
+          <Property Name="howitworksiconone" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworkssubheaderone" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksparaone" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksicontwo" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworkssubheadertwo" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksparatwo" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksiconthree" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworkssubheaderthree" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksparathree" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksiconfour" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworkssubheaderfour" Type="varchar" MaxLength="1000" />
+          <Property Name="howitworksparafour" Type="varchar" MaxLength="1000" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_techanicians">
+          <Key>
+            <PropertyRef Name="technicianid" />
+          </Key>
+          <Property Name="technicianid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="technicianname" Type="varchar" MaxLength="1000" />
+          <Property Name="technicianaddress" Type="varchar" MaxLength="2000" />
+          <Property Name="technicianavgrating" Type="varchar" MaxLength="100" />
+          <Property Name="techniciantotalnorating" Type="int" />
+          <Property Name="technicianimage" Type="varchar" MaxLength="1000" />
+          <Property Name="Cityid" Type="int" />
+        </EntityType>
+        <EntityContainer Name="rorepairadminModelStoreContainer">
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_blogs" EntityType="Self.tbl_blogs" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_customerreviews" EntityType="Self.tbl_customerreviews" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_faqs" EntityType="Self.tbl_faqs" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_headers" EntityType="Self.tbl_headers" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_howitworks" EntityType="Self.tbl_howitworks" Schema="ro" store:Type="Tables" />
+          <EntitySet Name="tbl_techanicians" EntityType="Self.tbl_techanicians" Schema="ro" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rorepairadminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="rorepairadminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="rorepairadminModel.City" />
+          <EntitySet Name="tbl_blogs" EntityType="rorepairadminModel.tbl_blogs" />
+          <EntitySet Name="tbl_customerreviews" EntityType="rorepairadminModel.tbl_customerreviews" />
+          <EntitySet Name="tbl_faqs" EntityType="rorepairadminModel.tbl_faqs" />
+          <EntitySet Name="tbl_headers" EntityType="rorepairadminModel.tbl_headers" />
+          <EntitySet Name="tbl_howitworks" EntityType="rorepairadminModel.tbl_howitworks" />
+          <EntitySet Name="tbl_techanicians" EntityType="rorepairadminModel.tbl_techanicians" />
+        </EntityContainer>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Cityid" />
+          </Key>
+          <Property Name="Cityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cityname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_blogs">
+          <Key>
+            <PropertyRef Name="blogid" />
+          </Key>
+          <Property Name="blogid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blogname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="blogimage" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="blogdate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="blogdesc" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_customerreviews">
+          <Key>
+            <PropertyRef Name="customerreviewsid" />
+          </Key>
+          <Property Name="customerreviewsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="technicianid" Type="Int32" />
+          <Property Name="customername" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="monthandyear" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_faqs">
+          <Key>
+            <PropertyRef Name="faqid" />
+          </Key>
+          <Property Name="faqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="faqquestion" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="faqanswer" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_headers">
+          <Key>
+            <PropertyRef Name="headerid" />
+          </Key>
+          <Property Name="headerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="technicianheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="customerreviewsheader" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="blogheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="faqsheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="aboutrorepairheader" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="avgrating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="totalnoofratings" Type="Int32" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_howitworks">
+          <Key>
+            <PropertyRef Name="howitworksid" />
+          </Key>
+          <Property Name="howitworksid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="howitworksheader" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksiconone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworkssubheaderone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksparaone" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksicontwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworkssubheadertwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksparatwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksiconthree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworkssubheaderthree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksparathree" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksiconfour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworkssubheaderfour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="howitworksparafour" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_techanicians">
+          <Key>
+            <PropertyRef Name="technicianid" />
+          </Key>
+          <Property Name="technicianid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="technicianname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="technicianaddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="technicianavgrating" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="techniciantotalnorating" Type="Int32" />
+          <Property Name="technicianimage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Cityid" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rorepairadminModelStoreContainer" CdmEntityContainer="rorepairadminEntities">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="rorepairadminModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Cityname" ColumnName="Cityname" />
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_blogs">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_blogs">
+              <MappingFragment StoreEntitySet="tbl_blogs">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="blogdesc" ColumnName="blogdesc" />
+                <ScalarProperty Name="blogdate" ColumnName="blogdate" />
+                <ScalarProperty Name="blogimage" ColumnName="blogimage" />
+                <ScalarProperty Name="blogname" ColumnName="blogname" />
+                <ScalarProperty Name="blogid" ColumnName="blogid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_customerreviews">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_customerreviews">
+              <MappingFragment StoreEntitySet="tbl_customerreviews">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="monthandyear" ColumnName="monthandyear" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+                <ScalarProperty Name="technicianid" ColumnName="technicianid" />
+                <ScalarProperty Name="customerreviewsid" ColumnName="customerreviewsid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_faqs">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_faqs">
+              <MappingFragment StoreEntitySet="tbl_faqs">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="faqanswer" ColumnName="faqanswer" />
+                <ScalarProperty Name="faqquestion" ColumnName="faqquestion" />
+                <ScalarProperty Name="faqid" ColumnName="faqid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_headers">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_headers">
+              <MappingFragment StoreEntitySet="tbl_headers">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="totalnoofratings" ColumnName="totalnoofratings" />
+                <ScalarProperty Name="avgrating" ColumnName="avgrating" />
+                <ScalarProperty Name="aboutrorepairheader" ColumnName="aboutrorepairheader" />
+                <ScalarProperty Name="faqsheader" ColumnName="faqsheader" />
+                <ScalarProperty Name="blogheader" ColumnName="blogheader" />
+                <ScalarProperty Name="customerreviewsheader" ColumnName="customerreviewsheader" />
+                <ScalarProperty Name="technicianheader" ColumnName="technicianheader" />
+                <ScalarProperty Name="headerid" ColumnName="headerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_howitworks">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_howitworks">
+              <MappingFragment StoreEntitySet="tbl_howitworks">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="howitworksparafour" ColumnName="howitworksparafour" />
+                <ScalarProperty Name="howitworkssubheaderfour" ColumnName="howitworkssubheaderfour" />
+                <ScalarProperty Name="howitworksiconfour" ColumnName="howitworksiconfour" />
+                <ScalarProperty Name="howitworksparathree" ColumnName="howitworksparathree" />
+                <ScalarProperty Name="howitworkssubheaderthree" ColumnName="howitworkssubheaderthree" />
+                <ScalarProperty Name="howitworksiconthree" ColumnName="howitworksiconthree" />
+                <ScalarProperty Name="howitworksparatwo" ColumnName="howitworksparatwo" />
+                <ScalarProperty Name="howitworkssubheadertwo" ColumnName="howitworkssubheadertwo" />
+                <ScalarProperty Name="howitworksicontwo" ColumnName="howitworksicontwo" />
+                <ScalarProperty Name="howitworksparaone" ColumnName="howitworksparaone" />
+                <ScalarProperty Name="howitworkssubheaderone" ColumnName="howitworkssubheaderone" />
+                <ScalarProperty Name="howitworksiconone" ColumnName="howitworksiconone" />
+                <ScalarProperty Name="howitworksheader" ColumnName="howitworksheader" />
+                <ScalarProperty Name="howitworksid" ColumnName="howitworksid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_techanicians">
+            <EntityTypeMapping TypeName="rorepairadminModel.tbl_techanicians">
+              <MappingFragment StoreEntitySet="tbl_techanicians">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="technicianimage" ColumnName="technicianimage" />
+                <ScalarProperty Name="techniciantotalnorating" ColumnName="techniciantotalnorating" />
+                <ScalarProperty Name="technicianavgrating" ColumnName="technicianavgrating" />
+                <ScalarProperty Name="technicianaddress" ColumnName="technicianaddress" />
+                <ScalarProperty Name="technicianname" ColumnName="technicianname" />
+                <ScalarProperty Name="technicianid" ColumnName="technicianid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

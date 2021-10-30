@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rorepairadminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Cityid" />
+    </Key>
+    <Property Name="Cityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cityname" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tbl_blogs">
+    <Key>
+      <PropertyRef Name="blogid" />
+    </Key>
+    <Property Name="blogid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="blogname" Type="varchar" MaxLength="1000" />
+    <Property Name="blogimage" Type="varchar" MaxLength="2000" />
+    <Property Name="blogdate" Type="varchar" MaxLength="100" />
+    <Property Name="blogdesc" Type="varchar" MaxLength="5000" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_customerreviews">
+    <Key>
+      <PropertyRef Name="customerreviewsid" />
+    </Key>
+    <Property Name="customerreviewsid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="technicianid" Type="int" />
+    <Property Name="customername" Type="varchar" MaxLength="1000" />
+    <Property Name="rating" Type="varchar" MaxLength="100" />
+    <Property Name="monthandyear" Type="varchar" MaxLength="100" />
+    <Property Name="comments" Type="varchar" MaxLength="1000" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_faqs">
+    <Key>
+      <PropertyRef Name="faqid" />
+    </Key>
+    <Property Name="faqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="faqquestion" Type="varchar" MaxLength="2000" />
+    <Property Name="faqanswer" Type="varchar" MaxLength="5000" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_headers">
+    <Key>
+      <PropertyRef Name="headerid" />
+    </Key>
+    <Property Name="headerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="technicianheader" Type="varchar" MaxLength="1000" />
+    <Property Name="customerreviewsheader" Type="varchar" MaxLength="1500" />
+    <Property Name="blogheader" Type="varchar" MaxLength="1000" />
+    <Property Name="faqsheader" Type="varchar" MaxLength="1000" />
+    <Property Name="aboutrorepairheader" Type="varchar" MaxLength="1000" />
+    <Property Name="avgrating" Type="varchar" MaxLength="100" />
+    <Property Name="totalnoofratings" Type="int" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_howitworks">
+    <Key>
+      <PropertyRef Name="howitworksid" />
+    </Key>
+    <Property Name="howitworksid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="howitworksheader" Type="varchar" MaxLength="100" />
+    <Property Name="howitworksiconone" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworkssubheaderone" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksparaone" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksicontwo" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworkssubheadertwo" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksparatwo" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksiconthree" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworkssubheaderthree" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksparathree" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksiconfour" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworkssubheaderfour" Type="varchar" MaxLength="1000" />
+    <Property Name="howitworksparafour" Type="varchar" MaxLength="1000" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_techanicians">
+    <Key>
+      <PropertyRef Name="technicianid" />
+    </Key>
+    <Property Name="technicianid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="technicianname" Type="varchar" MaxLength="1000" />
+    <Property Name="technicianaddress" Type="varchar" MaxLength="2000" />
+    <Property Name="technicianavgrating" Type="varchar" MaxLength="100" />
+    <Property Name="techniciantotalnorating" Type="int" />
+    <Property Name="technicianimage" Type="varchar" MaxLength="1000" />
+    <Property Name="Cityid" Type="int" />
+  </EntityType>
+  <EntityContainer Name="rorepairadminModelStoreContainer">
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_blogs" EntityType="Self.tbl_blogs" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_customerreviews" EntityType="Self.tbl_customerreviews" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_faqs" EntityType="Self.tbl_faqs" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_headers" EntityType="Self.tbl_headers" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_howitworks" EntityType="Self.tbl_howitworks" Schema="ro" store:Type="Tables" />
+    <EntitySet Name="tbl_techanicians" EntityType="Self.tbl_techanicians" Schema="ro" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

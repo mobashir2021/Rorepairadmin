@@ -1,0 +1,76 @@
+﻿@model IEnumerable<RoRepairAdmin.Models.headersmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            City
+        </th>
+        <th>
+            Technician Header
+        </th>
+        <th>
+            Customer Review Header
+        </th>
+        <th>
+            Blog Header
+        </th>
+        <th>
+            FAQs Header
+        </th>
+        <th>
+            About RORepair Header
+        </th>
+        <th>
+            Average Rating
+        </th>
+        <th>
+            Total Rating
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.technicianheader)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.customerreviewsheader)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.blogheader)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.faqsheader)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.aboutrorepairheader)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.avgrating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.totalnoofratings)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.tbl.headerid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.tbl.headerid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.tbl.headerid })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RoRepairAdmin.Models.blogsmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.blogname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.blogimage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.blogdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl.blogdesc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.blogname)
+    </td>
+    <td>
+        <img src="@Url.Content("~/UploadedFiles/" + item.tbl.blogimage)" alt="Image" style="height:40px;width:40px;" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.blogdate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl.blogdesc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.tbl.blogid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.tbl.blogid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.tbl.blogid })
+    </td>
+</tr>
+}
+
+</table>
